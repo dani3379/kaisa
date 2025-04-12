@@ -10,8 +10,11 @@
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   </head>
   <body>
-    <!-- Add this script to handle Identity redirects -->
+    <!-- Add this script to initialize Netlify CMS -->
     <script>
+      // Initialize Netlify CMS
+      CMS.init();
+      // Handle Netlify Identity redirects
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (user) => {
           if (!user) {
