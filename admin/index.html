@@ -6,24 +6,30 @@
     <title>Kaisa Varna CMS</title>
     <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- Netlify CMS Script -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   </head>
   <body>
-    <!-- Add this script to initialize Netlify CMS -->
+    <!-- Load CMS script at the end of the body -->
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
     <script>
-      // Initialize Netlify CMS
-      CMS.init();
-      // Handle Netlify Identity redirects
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
+      // Wait for the DOM to load
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Netlify CMS
+        if (typeof CMS !== "undefined") {
+          CMS.init();
+          // Handle Netlify Identity redirects
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", (user) => {
+              if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                  document.location.href = "/admin/";
+                });
+              }
             });
           }
-        });
-      }
+        } else {
+          console.error("CMS script failed to load!");
+        }
+      });
     </script>
   </body>
 </html>
