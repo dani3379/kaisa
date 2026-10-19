@@ -9,39 +9,48 @@
 <body>
   <header>
     <div class="logo">♞ KAISA CHESS CLUB</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Tournaments</a>
-      <a href="#">Contact</a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#tournaments">Tournaments</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <img src="images/main_image.png" alt="Chess board">
+    <section class="hero" id="home" aria-labelledby="welcome-heading">
+      <img src="images/main_image.png" alt="Wooden chess pieces on a chessboard" fetchpriority="high">
       <div class="hero-text">
-        <h1>KAISA CHESS CLUB</h1>
+        <h1 id="welcome-heading">KAISA CHESS CLUB</h1>
         <p>Welcome to Kaisa Chess Club — join us to play and enjoy the game of chess!</p>
         <button>Become a Member</button>
       </div>
     </section>
 
-    <section class="info-cards">
-      <div class="card">
-        <h2>NEWS</h2>
-        <p>Upcoming events and recent club news</p>
-      </div>
-      <div class="card">
-        <h2>ABOUT US</h2>
-        <p>Information about the Kaisa Chess Club</p>
-      </div>
-      <div class="card">
-        <h2>LATEST TOURNAMENTS</h2>
-        <p>View results from our recent tournaments</p>
-      </div>
+    <section class="info-cards" aria-label="Explore the club">
+      <article class="card" id="news">
+        <img src="images/chess-news.jpg" alt="An overhead view of a wooden chess set ready for a game" width="1000" height="750" loading="lazy" decoding="async">
+        <div class="card-content">
+          <h2>NEWS</h2>
+          <p>Upcoming events and recent club news</p>
+        </div>
+      </article>
+      <article class="card" id="about">
+        <img src="images/chess-strategy.jpg" alt="A close-up of wooden chess pieces during a game" width="1000" height="667" loading="lazy" decoding="async">
+        <div class="card-content">
+          <h2>ABOUT US</h2>
+          <p>Information about the Kaisa Chess Club</p>
+        </div>
+      </article>
+      <article class="card" id="tournaments">
+        <img src="images/chess-tournament.jpg" alt="Chessboards and analogue clocks arranged for tournament play" width="1000" height="1370" loading="lazy" decoding="async">
+        <div class="card-content">
+          <h2>TOURNAMENTS</h2>
+          <p>Tournament information and announcements</p>
+        </div>
+      </article>
     </section>
-    <footer>
+    <footer id="contact">
         <div class="footer-content">
           <div class="footer-section">
             <h3>Contact</h3>
@@ -50,8 +59,8 @@
           </div>
           <div class="footer-section">
             <h3>Quick Links</h3>
-            <a href="#">About</a>
-            <a href="#">Tournaments</a>
+            <a href="#about">About</a>
+            <a href="#tournaments">Tournaments</a>
             <a href="#">Membership</a>
           </div>
           <div class="footer-section">
@@ -63,9 +72,10 @@
         </div>
         <div class="footer-bottom">
           <p>&copy; 2025 Kaisa Chess Club. All rights reserved.</p>
+          <p class="photo-credits">Illustrative photography: <a href="https://unsplash.com/photos/uH5LA5UtMJM">Annie Spratt</a>, <a href="https://unsplash.com/photos/7VGzV09YnvA">Jani Kaasinen</a> and <a href="https://unsplash.com/photos/0n7fgIqysAE">Dane Crivellaro</a> / Unsplash.</p>
         </div>
       </footer>
-      
+
   </main>
 </body>
 </html>
